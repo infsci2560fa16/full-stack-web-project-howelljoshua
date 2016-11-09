@@ -1,0 +1,200 @@
+/* NAV BAR TOP */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+.nav a {
+    color:#ffffff;
+}
+.navbar-header a {
+    color:#ffffff ;
+    padding-right:100px;
+}
+
+
+
+/* PAGE BODY */
+body {
+    font-family:'Calibri';
+    font-size:14px;
+    background-color:#9B60DB;
+}
+
+/*CENTERING FOR DIV
+.centered {
+    margin: 0 auto;
+    text-align: left;
+    width: 800px;
+}
+*/
+
+
+/*FORMS USES A CLASS */
+.forms {    
+    padding: 0px 64px;
+    display: block;
+    font-size: 18px;
+}
+
+
+/*HIDE CLASS MAKES ITEMS INVISIBLE*/
+.hide{
+  visibility: hidden;  
+}
+
+/*SHOW CLASS MAKES ITEMS VISIBLE*/
+.show{
+  visibility: visible;  
+}
+
+
+
+
+.text-center {
+    text-align:center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Calibri';
+}
+
+h1 {
+    line-height:80px;
+    font-weight:900;
+    font-size:60px;
+    padding:30px 20px 10px 20px;
+}
+h2 {
+    line-height:40px;
+    font-weight:900;
+    font-size:30px;
+    padding:20px 20px 10px 20px;
+}
+
+h3 {
+    line-height:30px;
+    padding-bottom:20px;
+}
+
+h4 {
+    line-height:40px;
+    padding-bottom:15px;
+}
+
+p {
+    font-weight:300;
+    line-height:30px;
+    padding-bottom:20px;
+}
+
+.space-free {
+    height:100px;
+}
+
+
+section {
+    padding-top:50px;
+    padding-bottom:30px;
+}
+
+.color-white {
+    background-color:#fff;
+}
+.color-dark {
+    background-color:#696969;
+}
+
+.color-light {
+    background-color:#E9E9E9;
+}
+
+.head-main {
+    font-size:80px;
+    font-weight:900;
+    color:#fff;
+    padding:150px 20px 10px 20px;
+}
+.head-sub-main {
+    font-size:40px;
+    font-weight:600;
+    color:#fff;
+    padding:5px 20px 150px 20px;
+}
+
+/* DROPDOWN */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 132px;
+    font-family: 'Tahoma';    
+    font-size: 32px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bolder;
+    display:  inline-block;
+    position: fixed;    
+}
+
+/* DROPDOWN BUTTON HOVER */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/* POSITION OF THE DROPDOWN'S CONTENT*/
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+/* DROPDOWN CONTENT */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+}
+
+/* DROPDOWN LINKS TEXT */
+.dropdown-content a {
+    color: black;
+    font-weight: bolder;
+    font-size: 24px;
+    padding: 6px 155px;
+    text-decoration: none;
+    display: block;
+}
+
+/* DROPDOWN LINKS HOVER */
+.dropdown-content a:hover {background-color: #d1d1d1}
+
+/* Show the dropdown menu */
+.show {display:block;}
+
+
+
+/* FOOTER NOT USED */
+#footer {
+    background-color:#000;
+    color:#fff;
+    padding:20px 50px 20px 50px;
+    text-align: center;
+}
