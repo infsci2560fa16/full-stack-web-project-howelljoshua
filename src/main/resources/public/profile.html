@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+
     <head>
         <title>My Profile</title>
         <meta charset="UTF-8">
@@ -12,17 +12,125 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
         <script type="text/javascript" src="js/javascript.js"></script>
     </head>
+    
+    
     <body>
-        
+      <form name="profForm">
         <ul class="topnav" id="topNav">
             <li><a href="index.html">Begin Your Search</a></li>
             <li><a href="instructor.html">Instructors</a></li>
             <li><a href="student.html">Students</a></li>
             <li><a href="profile.html">Your Profile</a></li>            
         </ul>
+ 
+        <h2>Your Profile:</h2>
+        <p id="profText"></p>
+   
+          <div class="forms"> 
+            First Name:<br>
+            <input name="firstname" id="firstname"><br>
+            
+            Last Name:<br>
+            <input name="lastname" id="lastname"><br>
+            
+            Type of Instruction:<br> 
+            <select name="instructiontype" id="instructiontype">            
+              <option value="Online">Online Instruction</option>
+              <option value="Local">Local Instruction</option>
+            </select>
+            <br>
+            
+                     
+
+            <div id="zipbox">
+            Zip Code:<br>
+            <input id="zip" name="zip">   
+            </div>
+            
+
+            
+            Guitar Type:<br>        
+            <select name="guitartype" id="guitartype">              
+              <option value="Acoustic">Acoustic</option>
+              <option value="Electric">Electric</option>
+              <option value="Classical">Classical</option>
+              <option value="Bass">Bass</option>
+              <option value="Baritone">Baritone</option>
+              <option value="Tenor Guitar">Tenor Guitar</option>  
+              <option value="Slide/Steel">Slide/Steel</option>
+              <option value="Dobro">Dobro</option>    
+              <option value="12 String">12 String</option>       
+            </select>
+            <br><br>
+            
+            
+            
+            
+            
+            Musical Genres:<br>
+            <select name="genre" id="genre" >
+              <option value="Rock">Rock</option>
+              <option value="Metal">Metal</option>
+              <option value="Jazz">Jazz</option> 
+              <option value="Funk">Funk</option>      
+              <option value="Classical">Classical</option>
+              <option value="Country">Country</option>
+              <option value="Bluegrass">Bluegrass</option>
+              <option value="Punk">Punk</option>
+              <option value="Funk">Reggae/Ska</option> 
+              <option value="Noise/Experimental">Noise/Experimental</option>
+              <option value="Flamenco">Flamenco</option> 
+              <option value="Fingerstyle">Fingerstyle</option>              
+              
+            </select>
+            <br><br>
 
 
-        
-        <div><h2>Your Profile</div>
-    </body>
-</html>
+            
+            
+            Age Range:<br> 
+            <select name="agerange" id="agerange">            
+              <option value="Child">Child</option>
+              <option value="Teenager">Teenager</option>
+              <option value="Twenties">Twenties</option>              
+              <option value="Thirties">Thirties</option>              
+              <option value="Forties">Forties</option>   
+              <option value="Fifties and Up">Fifties and Up</option>
+            </select>
+            <br><br>
+            
+            
+            Skill Level:<br>
+            <select name="skill" id="skill">              
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate (2-5 years)</option>
+              <option value="Advanced">Advanced (5-10 years)</option>
+              <option value="Master">Master (10+ years)</option>      
+            </select>
+            <br><br>
+
+            
+            
+            Instruction Goals / Areas of Focus:<br>
+            <select multiple name="focus" id="focus">
+              <option value="Short-term">Short-Term / Casual</option>
+              <option value="Overall">Overall Improvement</option>
+              <option value="Speed">Improve Speed</option> 
+              <option value="Accuracy">Improve Accuracy</option> 
+              <option value="Picking">Picking</option> 
+              <option value="Finger Picking">Finger Picking</option>
+              <option value="Chords">Chords</option>
+              <option value="Music Theory">Music Theory</option>
+              <option value="Playing by Ear">Playing by Ear</option>
+              <option value="Alternate Tunings">Alternate Tunings</option>
+            </select>
+            <br><br>
+            
+         
+
+           <input type="button" value="Save" onclick="save()">
+           
+      </div>
+   </form>   
+</body>
+
