@@ -39,8 +39,8 @@ public class Main {
 
         Statement stmt = connection.createStatement();
         stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
-        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-        ResultSet rs = stmt.executeQuery("SELECT * FROM ticks");
+        stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists");
 
         ArrayList<String> output = new ArrayList<String>();
         while (rs.next()) {

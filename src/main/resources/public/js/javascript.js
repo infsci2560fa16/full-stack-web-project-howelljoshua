@@ -65,7 +65,7 @@ function save() {
             obj.focus;
     }    
     
-    //$.post("/api",obj);
-    jQuery.post( "/saveuser" [obj] ["posted successfully"] [String] );
+    $.post("/saveuser",obj);
+
 
 
