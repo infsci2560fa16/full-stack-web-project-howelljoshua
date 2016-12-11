@@ -120,6 +120,7 @@ public class Main {
                 
                 
                 try{
+                    connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();
                     stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
                     stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES(" + firstname + "," + lastname +")");
