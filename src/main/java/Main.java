@@ -123,7 +123,8 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();
                     stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
-                    stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES(" + firstname + "," + lastname +")");
+                    stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");
+                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES(" + firstname + "," + lastname +")");
                       //now that data has been inserted, query for all records in this table and make an arraylist of objects
                     ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists");
                     ArrayList<String> output = new ArrayList<>(); 
