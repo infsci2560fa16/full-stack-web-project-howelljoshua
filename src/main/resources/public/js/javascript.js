@@ -36,7 +36,7 @@ function save() {
     skill = profForm["skill"].value;        
     focus = profForm["focus"].value; 
     
-        
+       
     data = JSON.stringify(
        {"firstname":firstname,
         "lastname":lastname,
@@ -48,6 +48,8 @@ function save() {
         "skill":skill,
         "focus":focus}        
     );
+    
+   
 
     obj = JSON.parse(data);
     
@@ -63,6 +65,7 @@ function save() {
             obj.focus;
     }    
     
-    $.post("/api",obj);
+    //$.post("/api",obj);
+    jQuery.post( "/saveuser" [obj] ["posted successfully"] [String] );
 
 
