@@ -49,7 +49,7 @@ function save() {
         "focus":focus}        
     );
     
-    obj = JSON.parse(data);
+    obj = JSON.parse(data); //profform??
     $.post("/saveuser",obj);
      
       document.getElementById("profText").innerHTML = "Sent to database";
@@ -68,8 +68,3 @@ function save() {
     */
    
     }    
-    
-    $.post("/saveuser",obj);
-
-
-
