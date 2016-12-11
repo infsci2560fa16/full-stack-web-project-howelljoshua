@@ -49,11 +49,13 @@ function save() {
         "focus":focus}        
     );
     
-   
-
     obj = JSON.parse(data);
-    
-        document.getElementById("profText").innerHTML =
+    $.post("/saveuser",obj);
+     
+      document.getElementById("profText").innerHTML = "Sent to database";
+                
+                
+    /*            
             obj.firstname + "<br>" +
             obj.lastname + "<br>" +
             obj.instructiontype + "<br>" +
@@ -63,6 +65,8 @@ function save() {
             obj.agerange + "<br>" +
             obj.skill + "<br>" +
             obj.focus;
+    */
+   
     }    
     
     $.post("/saveuser",obj);
