@@ -54,17 +54,15 @@ function save() {
      
       document.getElementById("profText").innerHTML = "Sent to database";
                 
-                
-    /*            
-            obj.firstname + "<br>" +
-            obj.lastname + "<br>" +
-            obj.instructiontype + "<br>" +
-            obj.zip + "<br>" +
-            obj.guitartype + "<br>" +
-            obj.genre + "<br>" +
-            obj.agerange + "<br>" +
-            obj.skill + "<br>" +
-            obj.focus;
-    */
+            //obj.firstname + "<br>" +
+            //obj.lastname + "<br>" +
+            //obj.instructiontype + "<br>" +
+            //obj.zip + "<br>" +
+            //obj.guitartype + "<br>" +
+            //obj.genre + "<br>" +
+            //obj.agerange + "<br>" +
+            //obj.skill + "<br>" +
+            //obj.focus;
+    
    
     }    
