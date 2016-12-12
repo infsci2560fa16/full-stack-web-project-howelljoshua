@@ -9,6 +9,9 @@ import spark.template.freemarker.FreeMarkerEngine;
 import spark.ModelAndView;
 import static spark.Spark.get;
 import com.heroku.sdk.jdbc.DatabaseUrl;
+import com.google.gson.Gson;
+
+
 
 
 public class Main {   
@@ -57,18 +60,12 @@ public class Main {
       } finally {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
-      
-      
-      
+
     }, new FreeMarkerEngine());
     
-    
-   
+
     //INSERT INTO guitarists (firstname, lastname) VALUES(firstname, lastname);    
     //post("/api", (req, res) -> userService.createUser(
-    
-
-    
     
     /*    
     post("/api", (req, res) -> userService.createUser(
@@ -109,10 +106,6 @@ public class Main {
             	//String focus = req.queryParams("focus");
 
 
-
-
-                
-
                 
       post("/saveuser", (req, res) -> {
         
@@ -151,11 +144,6 @@ public class Main {
                 return attributes;                
             });  
                 
-      
-
-
-        
-        
         
   }//end of main()
 }//end Main Class

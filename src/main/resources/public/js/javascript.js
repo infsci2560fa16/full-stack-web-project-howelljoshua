@@ -51,16 +51,17 @@ function save() {
     );
     
     //obj = JSON.parse(data);  //WAS USED TO DISPLAY THE DATA
-    //$.post("/saveuser",data);  //
+    $.post("saveuser", data);  //
     
     
-
+/*
     $.ajax({
         url: 'saveuser',
         type: 'POST',
         data: data,
         processData: false
 }   );  
+*/
 
 
 
