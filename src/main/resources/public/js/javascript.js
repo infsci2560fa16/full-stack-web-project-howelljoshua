@@ -24,10 +24,8 @@
     //called by Save button on Profile form, parses values from fields, makes JSON obj...
     //Sends to REST svc, passed to JDBC
 function save() {
-    $.post("saveuser", $("#profFrom").serialize() );
-    
-    /*
-    //profForm = document.getElementsById("profForm");
+    //$.post("saveuser", $("#profFrom").serialize() ); UNUSED 
+    //profForm = document.getElementsById("profForm"); UNUSED
     
     firstname = profForm["firstname"].value;
     lastname = profForm["lastname"].value;
@@ -52,11 +50,21 @@ function save() {
         "focus":focus}        
     );
     
-    obj = JSON.parse(data);
-    $.post("/saveuser",obj);
-
+    //obj = JSON.parse(data);  //WAS USED TO DISPLAY THE DATA
+    $.post("/saveuser",data);  //
     
-      document.getElementById("profText").innerHTML = "Sent to database";
+    
+/*
+    $.ajax({
+        url: '/saveuser',
+        type: 'POST',
+        data: data,
+        processData: false
+}   );  
+*/
+
+
+    document.getElementById("profText").innerHTML = "Sent to database";
             //obj.zip + "<br>" +    
             //obj.firstname + "<br>" +
             //obj.lastname + "<br>" +
@@ -66,7 +74,7 @@ function save() {
             //obj.agerange + "<br>" +
             //obj.skill + "<br>" +
             //obj.focus;
-    */        
+
     
    
     }    

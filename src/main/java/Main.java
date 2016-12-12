@@ -147,7 +147,7 @@ public class Main {
                     if (connection != null) try{connection.close();} catch(SQLException e){}
                 }
                 
-                res.redirect("db.ftl");
+                //res.redirect("db.ftl");
                 return attributes;                
             });  
                 
