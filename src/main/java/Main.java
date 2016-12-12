@@ -108,12 +108,18 @@ public class Main {
 
                 
       post("/saveuser", (Request req, Response res) -> {
-                String firstname = req.queryParams("data.firstname");
-                String lastname = req.queryParams("data.lastname");
-                //String firstname = req.queryParams("firstname");        
-            	//String lastname = req.queryParams("lastname");
-                System.out.print("firstname is");
-                System.out.print("lastname is");
+                String firstname = req.queryParams("firstname");        
+            	String lastname = req.queryParams("lastname");
+                String instructiontype  = req.queryParams("instructiontype");
+                String zip = req.queryParams("zip");
+                String guitartype = req.queryParams("guitartype");
+                String genre = req.queryParams("genre");
+                String agerange = req.queryParams("agerange");
+                String skill = req.queryParams("skill");
+            	String focus = req.queryParams("focus");
+                
+                
+                
                   //make new db connection, create a new hashmap to be used later for results
                 Connection connection = null;
                 Map<String, Object> attributes = new HashMap<>();  
@@ -121,11 +127,19 @@ public class Main {
                 
                 try{
                     connection = DatabaseUrl.extract().getConnection();
-                    Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
+                    Statement stmt = connection.createStatement();                    
+                    stmt.execute("INSERT INTO guitarists (firstname, lastname) VALUES ('Johnny', 'Folk')"); 
+                    
+                    
+                    //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
+                    //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
+                    
+                    
+                    
+                    //stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
                     //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
-                    stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
+                    //stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
                      
    
                     //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
