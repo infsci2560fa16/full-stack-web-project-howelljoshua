@@ -56,7 +56,7 @@ function save() {
     
 
     $.ajax({
-        url: '/saveuser',
+        url: 'saveuser',
         type: 'POST',
         data: data,
         processData: false
@@ -73,8 +73,5 @@ function save() {
             //obj.genre + "<br>" +
             //obj.agerange + "<br>" +
             //obj.skill + "<br>" +
-            //obj.focus;
-
-    
-   
+            //obj.focus;     
     }    
