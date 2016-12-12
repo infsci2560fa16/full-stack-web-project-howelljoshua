@@ -50,7 +50,16 @@ public class Main {
 
         ArrayList<String> output = new ArrayList<String>();
         while (rs.next()) {
-          output.add( "Read from DB: " + rs.getTimestamp("tick"));
+          //output.add( "Read from DB: " + rs.getTimestamp("tick"));
+          output.add( "Read from DB: " + rs.getString("firstname"));
+          output.add( "Read from DB: " + rs.getString("lastname"));
+          output.add( "Read from DB: " + rs.getString("instructiontype"));
+          output.add( "Read from DB: " + rs.getString("zip"));
+          output.add( "Read from DB: " + rs.getString("guitartype"));
+          output.add( "Read from DB: " + rs.getString("genre"));
+          output.add( "Read from DB: " + rs.getString("agerange"));
+          output.add( "Read from DB: " + rs.getString("skill"));
+          output.add( "Read from DB: " + rs.getString("focus"));
         }
 
         attributes.put("results", output);
