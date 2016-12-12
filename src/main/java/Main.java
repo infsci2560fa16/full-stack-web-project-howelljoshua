@@ -49,12 +49,17 @@ public class Main {
 
         attributes.put("results", output);
         return new ModelAndView(attributes, "db.ftl");
+        
       } catch (Exception e) {
-        attributes.put("message", "There was an error: " + e);
+        attributes.put("message", "There was an error: " + e);       
         return new ModelAndView(attributes, "error.ftl");
+        
       } finally {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
+      
+      
+      
     }, new FreeMarkerEngine());
     
     
@@ -142,10 +147,9 @@ public class Main {
                     if (connection != null) try{connection.close();} catch(SQLException e){}
                 }
                 
-                res.redirect("profile.html");
-                return attributes;
-                
-            });                
+                res.redirect("db.ftl");
+                return attributes;                
+            });  
                 
       
 
@@ -153,5 +157,5 @@ public class Main {
         
         
         
-    }//end of main()
+  }//end of main()
 }//end Main Class
