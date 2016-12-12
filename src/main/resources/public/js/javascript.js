@@ -68,7 +68,7 @@ function save() {
 
 
 
-    document.getElementById("profText").innerHTML = "Data Has been sent"
+    document.getElementById("profText").innerHTML = "Data Has been sent";
             /*
             obj.zip + "<br>" +    
             obj.firstname + "<br>" +
