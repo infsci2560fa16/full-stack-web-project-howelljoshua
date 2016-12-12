@@ -68,5 +68,6 @@ function save() {
             obj.focus;  
 
     $.post( "saveuser", data);  
+    console.log(firstname, lastname);
        
 }    
