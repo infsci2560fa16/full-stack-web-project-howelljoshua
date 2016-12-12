@@ -128,7 +128,7 @@ public class Main {
                 try{
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                    
-                    stmt.execute("INSERT INTO guitarists (firstname, lastname) VALUES ('Johnny', 'Folk')"); 
+                    stmt.execute("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')"); 
                     
                     
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
