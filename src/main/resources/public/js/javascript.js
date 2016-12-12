@@ -23,10 +23,11 @@
 
     //called by Save button on Profile form, parses values from fields, makes JSON obj...
     //Sends to REST svc, passed to JDBC
-function save() {
-    //$.post("saveuser", $("#profFrom").serialize() ); UNUSED 
-    //profForm = document.getElementsById("profForm"); NOT NEEDED
+function save() {    
+    $.post( "saveuser", $( "#profForm" ).serialize() );
     
+    //profForm = document.getElementsById("profForm"); NOT NEEDED
+/*
     firstname = profForm["firstname"].value;
     lastname = profForm["lastname"].value;
     instructiontype = profForm["instructiontype"].value;
@@ -52,10 +53,9 @@ function save() {
     
     obj = JSON.parse(data);  //used to display the data by field
     
-    $.post( "saveuser", data);
 
-    document.getElementById("profText").innerHTML = "Data Has been sent";
-            /*
+
+    document.getElementById("profText").innerHTML = "Data Has been sent";            
             obj.zip + "<br>" +    
             obj.firstname + "<br>" +
             obj.lastname + "<br>" +
@@ -65,5 +65,6 @@ function save() {
             obj.agerange + "<br>" +
             obj.skill + "<br>" +
             obj.focus;  
-            */
-    }    
+*/
+         
+}    
