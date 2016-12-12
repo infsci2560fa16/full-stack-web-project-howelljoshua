@@ -122,20 +122,15 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();
                     stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
-                    stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");
-                    
+                    //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
-                    
-                    
-                    
-                    
-                    
-                    //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
-                    //            pstmt.setString(1, firstname);
-                    //            pstmt.setString(2, lastname);
+                     
+   
+                    PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
+                               pstmt.setString(1, "James");
+                               pstmt.setString(2, "Hetfield");
 
-    
-                    
+
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')");               
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
                     
