@@ -58,10 +58,10 @@ function save() {
 
     document.getElementById("profText").innerHTML = 
             "Your profile has been created:" + "<br>" + 
-            obj.zip + "<br>" +    
             obj.firstname + "<br>" +
             obj.lastname + "<br>" +
             obj.instructiontype + "<br>" +
+            obj.zip + "<br>" +
             obj.guitartype + "<br>" +
             obj.genre + "<br>" +
             obj.agerange + "<br>" +
