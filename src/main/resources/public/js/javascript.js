@@ -58,8 +58,7 @@ function save() {
 
     document.getElementById("profText").innerHTML = 
             "Your profile has been created:" + "<br>" + 
-            obj.firstname + "<br>" +
-            obj.lastname + "<br>" +
+            obj.firstname + " " + obj.lastname + "<br>" +
             obj.instructiontype + "<br>" +
             obj.zip + "<br>" +
             obj.guitartype + "<br>" +
@@ -68,6 +67,6 @@ function save() {
             obj.skill + "<br>" +
             obj.focus;  
 
-    $.post( "saveuser", data);  
+    $.post( "saveuser", obj);  
        
 }    
