@@ -122,8 +122,8 @@ public class Main {
                     Statement stmt = connection.createStatement();
                     stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
                     //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES(" + firstname + "," + lastname +")");
-                    stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
+                    stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES(' + firstname + ',' + lastname +')");
+                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
                     
                     
                       //now that data has been inserted, query for all records in this table and make an arraylist of objects
