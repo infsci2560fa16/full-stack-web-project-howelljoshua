@@ -25,7 +25,7 @@
     //Sends to REST svc, passed to JDBC
 function save() {
     //$.post("saveuser", $("#profFrom").serialize() ); UNUSED 
-    //profForm = document.getElementsById("profForm"); 
+    //profForm = document.getElementsById("profForm"); NOT NEEDED
     
     firstname = profForm["firstname"].value;
     lastname = profForm["lastname"].value;
@@ -50,22 +50,26 @@ function save() {
         "focus":focus}        
     );
     
-    obj = JSON.parse(data);  
+    obj = JSON.parse(data);  //used to display the data by field
+    
     // $.post("saveuser", data);  
     
     
-/*
+
+
     $.ajax({
-        url: 'saveuser',
         type: 'POST',
-        data: data,
-        processData: false
-}   );  
-*/
+        contentType: 'application/json',
+        url: "saveuser",
+        dataType: "json",
+        data: data        
+    });
 
 
 
-    document.getElementById("profText").innerHTML = 
+
+    document.getElementById("profText").innerHTML = "Data Has been sent"
+            /*
             obj.zip + "<br>" +    
             obj.firstname + "<br>" +
             obj.lastname + "<br>" +
@@ -74,5 +78,6 @@ function save() {
             obj.genre + "<br>" +
             obj.agerange + "<br>" +
             obj.skill + "<br>" +
-            obj.focus;     
+            obj.focus;  
+            */
     }    
