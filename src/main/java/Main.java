@@ -122,17 +122,18 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();
                     stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
+                    stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
                     //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
                      
    
-                    PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
-                               pstmt.setString(1, "James");
-                               pstmt.setString(2, "Hetfield");
+                    //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
+                    //           pstmt.setString(1, "James");
+                    //           pstmt.setString(2, "Hetfield");
 
 
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')");               
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
+                    
                     
                     
                       //now that data has been inserted, query for all records in this table and make an arraylist of objects
