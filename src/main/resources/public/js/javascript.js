@@ -67,7 +67,22 @@ function save() {
             obj.skill + "<br>" +
             obj.focus;  
 
-    $.post( "saveuser", data);  
+    //$.post("saveuser", data);  
+    
+
+    $.ajax({
+        type: 'POST',
+        contentType: 'application/json',
+        url: "newuser",
+        dataType: "json",
+        data: data
+    });
+
+    
+    
+    
+    
+    
     console.log(firstname, lastname);
     console.log(data);
 }    
