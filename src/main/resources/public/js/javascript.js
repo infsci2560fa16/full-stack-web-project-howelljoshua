@@ -57,7 +57,7 @@ function save() {
 
 
     document.getElementById("profText").innerHTML = "Data Has been sent";  
-    $.post( "saveuser", data);  
+    $.post( "saveuser", obj);  
 /*  
             obj.zip + "<br>" +    
             obj.firstname + "<br>" +
