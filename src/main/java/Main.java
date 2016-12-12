@@ -108,9 +108,10 @@ public class Main {
 
                 
       post("/saveuser", (Request req, Response res) -> {
-        
-                String firstname = req.queryParams("firstname");        
-            	String lastname = req.queryParams("lastname");
+                String firstname = req.params("firstname");
+                String lastname = req.params("lastname");
+                //String firstname = req.queryParams("firstname");        
+            	//String lastname = req.queryParams("lastname");
                 System.out.print("firstname is");
                 System.out.print("lastname is");
                   //make new db connection, create a new hashmap to be used later for results
