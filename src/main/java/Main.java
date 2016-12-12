@@ -12,6 +12,9 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 import com.google.gson.Gson;
 import spark.Request;
 import spark.Response;
+import spark.QueryParamsMap;
+import spark.Route;
+
 
 
 
@@ -64,9 +67,8 @@ public class Main {
     }, new FreeMarkerEngine());
     
 
-    //INSERT INTO guitarists (firstname, lastname) VALUES(firstname, lastname);    
-    //post("/api", (req, res) -> userService.createUser(
-    
+
+ 
     /*    
     post("/api", (req, res) -> userService.createUser(
         String firstName = req.queryParams("firstname");
@@ -108,6 +110,7 @@ public class Main {
 
                 
       post("/saveuser", (Request req, Response res) -> {
+
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
                 String instructiontype  = req.queryParams("instructiontype");
@@ -169,9 +172,10 @@ public class Main {
                 }
                 
                 //res.redirect("db.ftl");
-                return attributes;                
-            });  
+                return attributes; 
                 
+            });  
+
         
   }//end of main()
 }//end Main Class
