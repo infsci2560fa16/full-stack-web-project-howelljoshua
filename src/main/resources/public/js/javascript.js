@@ -52,21 +52,7 @@ function save() {
     
     obj = JSON.parse(data);  //used to display the data by field
     
-    // $.post("saveuser", data);  
-    
-    
-
-
-    $.ajax({
-        type: 'POST',
-        contentType: 'application/json',
-        url: "saveuser",
-        dataType: "json",
-        data: data        
-    });
-
-
-
+    $.post( "saveuser", data);
 
     document.getElementById("profText").innerHTML = "Data Has been sent";
             /*
