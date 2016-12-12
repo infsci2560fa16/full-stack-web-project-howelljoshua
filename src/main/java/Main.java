@@ -111,7 +111,8 @@ public class Main {
         
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
-
+                System.out.print(firstname);
+                System.out.print(lastname);
                   //make new db connection, create a new hashmap to be used later for results
                 Connection connection = null;
                 Map<String, Object> attributes = new HashMap<>();  
