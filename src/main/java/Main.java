@@ -121,9 +121,13 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();
                     stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
-                    PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
-                                pstmt.setString(1, firstname);
-                                pstmt.setString(2, lastname);
+                                        
+                    stmt.executeUpdate("INSERT INTO guitarists VALUES(" + null + "," + firstname + "," + lastname + ")"); 
+                    
+                    
+                    //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
+                    //            pstmt.setString(1, firstname);
+                    //            pstmt.setString(2, lastname);
 
     
                     //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");
