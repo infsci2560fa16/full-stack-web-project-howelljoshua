@@ -67,6 +67,6 @@ function save() {
             obj.skill + "<br>" +
             obj.focus;  
 
-    $.post( "saveuser", obj);  
+    $.post( "saveuser", data);  
        
 }    
