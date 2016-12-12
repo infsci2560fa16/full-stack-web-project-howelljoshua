@@ -108,7 +108,7 @@ public class Main {
 
 
                 
-      post("/api", (req, res) ->  {        
+      post("/saveuser", (req, res) ->  {        
             String firstname = req.queryParams("firstname");
             String lastname = req.queryParams("lastname");
             System.out.print("firstname is " + firstname);

@@ -73,15 +73,11 @@ function save() {
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: "saveuser",
-        dataType: "json",
+        url: 'saveuser',
+        dataType: 'json',
         data: data
     });
 
-    
-    
-    
-    
     
     console.log(firstname, lastname);
     console.log(data);
