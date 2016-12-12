@@ -1,4 +1,6 @@
 
+/* global profForm */
+
 //When user clicks on button, toggles visible/invisible  
   function chooserBtn(){
     document.getElementById("beginDropdown").classList.toggle("show");
@@ -22,12 +24,12 @@
 
     //called by Save button on Profile form, parses values from fields, makes JSON obj...
     //Sends to REST svc, passed to JDBC
-function save() {       
+function save() { 
     
-    profForm = document.getElementsById("profForm"); 
+    //$.post( "saveuser", data);
     
+    //profForm = document.getElementsById("profForm"); 
     
-
     firstname = profForm["firstname"].value;
     lastname = profForm["lastname"].value;
     instructiontype = profForm["instructiontype"].value;
@@ -36,8 +38,7 @@ function save() {
     genre = profForm["genre"].value;
     agerange = profForm["agerange"].value;   
     skill = profForm["skill"].value;        
-    focus = profForm["focus"].value; 
-    
+    focus = profForm["focus"].value;    
        
     data = JSON.stringify(
        {"firstname":firstname,
@@ -53,7 +54,7 @@ function save() {
     
     obj = JSON.parse(data);  //used to display the data by field
     
-   //$.post( "saveuser", data);
+
 
     document.getElementById("profText").innerHTML = "Data Has been sent";            
             obj.zip + "<br>" +    
