@@ -10,13 +10,13 @@ import spark.ModelAndView;
 import static spark.Spark.get;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 import com.google.gson.Gson;
+import spark.Request;
+import spark.Response;
 
 
 
 
 public class Main {   
-    
-    
 
   public static void main(String[] args) {
 
@@ -107,7 +107,7 @@ public class Main {
 
 
                 
-      post("/saveuser", (req, res) -> {
+      post("/saveuser", (Request req, Response res) -> {
         
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
