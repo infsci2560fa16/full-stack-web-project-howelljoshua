@@ -122,7 +122,7 @@ public class Main {
                     Statement stmt = connection.createStatement();
                     stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
                                         
-                    stmt.executeUpdate("INSERT INTO guitarists VALUES(" + null + "," + firstname + "," + lastname + ")"); 
+                    stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
                     
                     
                     //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
