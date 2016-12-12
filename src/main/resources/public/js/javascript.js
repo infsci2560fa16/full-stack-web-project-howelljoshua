@@ -73,7 +73,7 @@ function save() {
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: "newuser",
+        url: "saveuser",
         dataType: "json",
         data: data
     });
