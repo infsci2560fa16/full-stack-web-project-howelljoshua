@@ -108,13 +108,9 @@ public class Main {
 
 
                 
-      post("/saveuser", new Route() {
-        @Override
-        public Object handle(Request req, Response res) throws Exception {
+      post("/api", (req, res) ->  {        
             String firstname = req.queryParams("firstname");
             String lastname = req.queryParams("lastname");
-            //String firstname = req.queryParams("firstname");
-            //String lastname = req.queryParams("lastname");
             System.out.print("firstname is " + firstname);
             System.out.print("lastname is " + lastname);
             //make new db connection, create a new hashmap to be used later for results
