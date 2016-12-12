@@ -12,6 +12,7 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 import com.google.gson.Gson;
 import spark.Request;
 import spark.Response;
+import spark.Route;
 
 
 
@@ -107,56 +108,59 @@ public class Main {
 
 
                 
-      post("/saveuser", (Request req, Response res) -> {
-                String firstname = req.params("firstname");
-                String lastname = req.params("lastname");
-                //String firstname = req.queryParams("firstname");        
-            	//String lastname = req.queryParams("lastname");
-                System.out.print("firstname is");
-                System.out.print("lastname is");
-                  //make new db connection, create a new hashmap to be used later for results
-                Connection connection = null;
-                Map<String, Object> attributes = new HashMap<>();  
+      post("/saveuser", new Route() {
+        @Override
+        public Object handle(Request req, Response res) throws Exception {
+            String firstname = req.queryParams("firstname");
+            String lastname = req.queryParams("lastname");
+            //String firstname = req.queryParams("firstname");
+            //String lastname = req.queryParams("lastname");
+            System.out.print("firstname is " + firstname);
+            System.out.print("lastname is " + lastname);
+            //make new db connection, create a new hashmap to be used later for results
+            Connection connection = null;
+            Map<String, Object> attributes = new HashMap<>();
+            
+            
+            try{
+                connection = DatabaseUrl.extract().getConnection();
+                Statement stmt = connection.createStatement();
+                stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
+                //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
+                //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");
+                stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")");
                 
                 
-                try{
-                    connection = DatabaseUrl.extract().getConnection();
-                    Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
-                    //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
-                    stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
-                     
-   
-                    //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
-                    //           pstmt.setString(1, "James");
-                    //           pstmt.setString(2, "Hetfield");
-
-
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')");               
-                    
-                    
-                    
-                      //now that data has been inserted, query for all records in this table and make an arraylist of objects
-                    ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists");
-                    ArrayList<String> output = new ArrayList<>(); 
-                        while (rs.next()) {
-                        output.add("Read from DB: " + rs.getTimestamp("tick"));
-                        }
+                //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname,lastname)VALUE(?,?)");
+                //           pstmt.setString(1, "James");
+                //           pstmt.setString(2, "Hetfield");
+                
+                
+                //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')");
+                
+                
+                
+                //now that data has been inserted, query for all records in this table and make an arraylist of objects
+                ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists");
+                ArrayList<String> output = new ArrayList<>();
+                while (rs.next()) {
+                    output.add("Read from DB: " + rs.getTimestamp("tick"));
                 }
-                
-                catch (Exception e) {
-                    attributes.put("message", "There was an error: " + e);
-                    return new ModelAndView(attributes, "profile.html");
-                }
-                
-                finally {
-                    if (connection != null) try{connection.close();} catch(SQLException e){}
-                }
-                
-                //res.redirect("db.ftl");
-                return attributes;                
-            });  
+            }
+            
+            catch (Exception e) {
+                attributes.put("message", "There was an error: " + e);
+                return new ModelAndView(attributes, "profile.html");
+            }
+            
+            finally {
+                if (connection != null) try{connection.close();} catch(SQLException e){}
+            }
+            
+            //res.redirect("db.ftl");
+            return attributes;
+        }
+    });  
                 
         
   }//end of main()
