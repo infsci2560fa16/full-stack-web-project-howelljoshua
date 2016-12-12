@@ -53,11 +53,10 @@ function save() {
     $.post("/saveuser",obj);
      
       document.getElementById("profText").innerHTML = "Sent to database";
-                
+            //obj.zip + "<br>" +    
             //obj.firstname + "<br>" +
             //obj.lastname + "<br>" +
             //obj.instructiontype + "<br>" +
-            //obj.zip + "<br>" +
             //obj.guitartype + "<br>" +
             //obj.genre + "<br>" +
             //obj.agerange + "<br>" +
