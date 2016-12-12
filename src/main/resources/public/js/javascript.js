@@ -69,5 +69,5 @@ function save() {
 
     $.post( "saveuser", data);  
     console.log(firstname, lastname);
-       
+    console.log(data);
 }    
