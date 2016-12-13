@@ -24,7 +24,7 @@
 
     //called by Save button on Profile form, parses values from fields, makes JSON obj...
     //Sends to REST svc, passed to JDBC
-function save() { 
+       function save() { 
     
     
     
@@ -67,9 +67,9 @@ function save() {
             obj.skill + "<br>" +
             obj.focus;  
 
-    //$.post("saveuser", data);  
+    $.post("saveuser", data);  
     
-
+/*
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
@@ -77,7 +77,7 @@ function save() {
         dataType: 'json',
         data: data
     });
-
+*/
     
     console.log(firstname, lastname);
     console.log(data);
