@@ -67,8 +67,12 @@
             obj.skill + "<br>" +
             obj.focus;  
 
-    $.post("saveuser", data);  
+
+    $.post( "saveuser", $( "#profForm" ).serialize() );
     
+//$.post("saveuser", data);  
+
+
 /*
     $.ajax({
         type: 'POST',
