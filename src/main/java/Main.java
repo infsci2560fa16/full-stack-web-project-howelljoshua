@@ -120,7 +120,7 @@ public class Main {
                 
       post("/saveuser", (Request req, Response res) -> {
            
-          
+                try{
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
                 String instructiontype  = req.queryParams("instructiontype");
@@ -138,7 +138,7 @@ public class Main {
                 Map<String, Object> attributes = new HashMap<>();  
                 
                 
-                try{
+                
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                    
                     stmt.execute("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')"); 
@@ -147,7 +147,7 @@ public class Main {
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
                     //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
                     //stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
+                    stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
                     //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
                      
