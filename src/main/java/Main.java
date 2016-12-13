@@ -119,7 +119,8 @@ public class Main {
 
                 
       post("/saveuser", (Request req, Response res) -> {
-
+           System.out.println(req);
+          
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
                 String instructiontype  = req.queryParams("instructiontype");
@@ -130,7 +131,7 @@ public class Main {
                 String skill = req.queryParams("skill");
             	String focus = req.queryParams("focus");
                 
-                System.out.println(req);
+                
                 
                   //make new db connection, create a new hashmap to be used later for results
                 Connection connection = null;
