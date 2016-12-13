@@ -130,7 +130,7 @@ public class Main {
                 String skill = req.queryParams("skill");
             	String focus = req.queryParams("focus");
                 
-                
+                System.out.println(req);
                 
                   //make new db connection, create a new hashmap to be used later for results
                 Connection connection = null;
@@ -145,9 +145,6 @@ public class Main {
                     
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
                     //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
-                    
-                    
-                    
                     //stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
                     //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
