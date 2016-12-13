@@ -120,7 +120,7 @@ public class Main {
                 
       post("/saveuser", (Request req, Response res) -> {
            
-                try{
+                
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
                 String instructiontype  = req.queryParams("instructiontype");
@@ -138,7 +138,7 @@ public class Main {
                 Map<String, Object> attributes = new HashMap<>();  
                 
                 
-                
+                try{
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                    
                     stmt.execute("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')"); 
