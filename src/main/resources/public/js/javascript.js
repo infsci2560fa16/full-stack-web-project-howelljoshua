@@ -84,7 +84,7 @@ function login() {
     
     loginobj = JSON.parse(logindata);
         
-    document.getElementById("showText").innerHTML = 
+    document.getElementById("showtext").innerHTML = 
         "Email/Password:" + "<br>"+
         loginobj.loginemail + " / " + loginobj.password;
  
