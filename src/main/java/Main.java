@@ -84,6 +84,8 @@ public class Main {
     String loginEmail = req.queryParams("loginEmail");
     String loginPassword = req.queryParams("loginPassword");  
     
+    System.out.println("**login method**loginemail=" + loginEmail);
+    
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
       try {
