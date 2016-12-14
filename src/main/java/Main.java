@@ -80,10 +80,10 @@ public class Main {
 //***LOGIN FUNCTION ...  
     get("/login", (Request req, Response res) -> {
 
-    String loginuser = req.queryParams("loginuser");
-    String loginpassword = req.queryParams("loginpassword");  
+    String loginuser = req.queryParams("loginuser"); //maruby
+    String loginpassword = req.queryParams("loginpassword");  //drummer1
     
-    System.out.println("**login method**loginuser=" + loginuser);
+    System.out.println("**login method**loginuser=" + loginuser); //maruby
     
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
@@ -94,7 +94,7 @@ public class Main {
         
         ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE username ='" +loginuser+ "')" );
             
-            if (loginpassword.equals(rs.getString("password") ) ){
+            //if (loginpassword.equals(rs.getString("password") ) ){
 
                     ArrayList<String> output = new ArrayList<>();
                     while (rs.next()) {
@@ -112,7 +112,7 @@ public class Main {
                     }
                     attributes.put("results", output);
                     return new ModelAndView(attributes, "db.ftl");
-            }
+           // }
 
       } catch (Exception e) {
         attributes.put("message", "There was an error: " + e);       
@@ -121,7 +121,7 @@ public class Main {
       } finally {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
-    return new ModelAndView(attributes, "db.ftl");  //will redirect to db.ftl and be blank
+  //  return new ModelAndView(attributes, "db.ftl");  //will redirect to db.ftl and be blank
     }, new FreeMarkerEngine());    
     
     
