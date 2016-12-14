@@ -111,16 +111,20 @@ public class Main {
                       output.add( "Areas of Focus: " + rs.getString("focus"));
                     }
                     attributes.put("results", output);
+                    res.redirect("db.ftl");
                     return new ModelAndView(attributes, "db.ftl");
+                    
            // }
 
       } catch (Exception e) {
-        attributes.put("message", "There was an error: " + e);       
+        attributes.put("message", "There was an error: " + e);
+        res.redirect("error.ftl");
         return new ModelAndView(attributes, "error.ftl");
         
       } finally {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
+      
   //  return new ModelAndView(attributes, "db.ftl");  //will redirect to db.ftl and be blank
     }, new FreeMarkerEngine());    
     
