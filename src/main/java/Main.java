@@ -176,7 +176,7 @@ public class Main {
                     
                     
                       //now that data has been inserted, query for all records in this table and make an arraylist of objects
-                    ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists");
+                    ResultSet rs = pstmt.executeQuery("SELECT * FROM guitarists");
                     ArrayList<String> output = new ArrayList<>(); 
                         while (rs.next()) {
                         output.add("Read from DB: " + rs.getTimestamp("tick"));
