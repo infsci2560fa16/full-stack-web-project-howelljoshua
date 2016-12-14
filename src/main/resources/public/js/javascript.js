@@ -1,5 +1,5 @@
 
-/* global profForm */
+/* global profForm, loginemail, loginpassword */
 
   //When user clicks on button, toggles visible/invisible  
 function chooserBtn(){
@@ -74,8 +74,20 @@ function save() {
 
 function login() {
     firstname = profForm["loginemail"].value;
-    lastname = profForm["password"].value;
+    lastname = profForm["loginpassword"].value;
     
-    $.post( "saveuser", $( "#profForm" ).serialize() );  
+    $.get( "login", $( "#profForm" ).serialize() );
+    
+    logindata = JSON.Stringify( 
+       {"loginemail" : loginemail,
+        "loginpassword" : loginpassword});
+    
+    loginobj = JSON.parse(logindata);
+        
+    document.getElementById("showText").innerHTML = 
+        "Email/Password:" + "<br>"+
+        loginobj.loginemail + " / " + loginobj.password;
+ 
+    console.log(loginemail, loginpassword);
     
 }

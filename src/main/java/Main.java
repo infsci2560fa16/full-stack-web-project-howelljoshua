@@ -93,9 +93,10 @@ public class Main {
         
         ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE email ='" +loginEmail+ "')" );
             
-        if (loginEmail == rs.getString("email")){
-            
+        if (loginEmail.equals(rs.getString("email") ) ){
+            System.out.println("Logged In Successfully");
         }
+        
         
         ArrayList<String> output = new ArrayList<String>();
         while (rs.next()) {
@@ -127,37 +128,7 @@ public class Main {
     }, new FreeMarkerEngine());    
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     
     
     
