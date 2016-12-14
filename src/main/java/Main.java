@@ -145,10 +145,12 @@ public class Main {
                 try{
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                   
-                    stmt.execute("INSERT INTO guitarists (firstname) VALUES ('" +guitartype+ "')"); 
+                    stmt.execute("INSERT INTO guitarists"
+                                //+"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instuctiontype,zip)"
+                                +"(firstname,lastname,email,password)"
+                                +" VALUES( '" +guitartype+ "','" +lastname+ "','" +email+ "','" +password+ "')"    ); 
          
-                    PreparedStatement pstmt = connection.prepareStatement(" INSERT INTO guitarists(firstname) VALUES(?) ");
-                    pstmt.setString(1, firstname);
+              
                                
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
                     //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
