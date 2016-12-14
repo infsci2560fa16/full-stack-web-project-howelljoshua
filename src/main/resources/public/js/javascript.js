@@ -33,6 +33,8 @@
     firstname = profForm["firstname"].value;
     lastname = profForm["lastname"].value;
     instructiontype = profForm["instructiontype"].value;
+    email = profForm["email"].value;
+    password = profForm["password"].value;
     zip = profForm["zip"].value;
     guitartype = profForm["guitartype"].value;
     genre = profForm["genre"].value;
