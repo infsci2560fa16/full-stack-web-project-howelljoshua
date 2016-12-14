@@ -146,10 +146,13 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                   
                     stmt.execute("INSERT INTO guitarists"
-                                +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instuctiontype,zip)"                                
-                                +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
-                                +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')" ); 
+                    //            +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instuctiontype,zip)"                                
+                    //            +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
+                    //            +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')" ); 
          
+                                +"(firstname,lastname,email,password,genre,focus,guitartype)"                                
+                                +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
+                                +guitartype+ "')" );                             
               
                                
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
