@@ -81,10 +81,10 @@ public class Main {
  
     get("/login", (req, res) -> {
 
-    String loginEmail = req.queryParams("loginEmail");
-    String loginPassword = req.queryParams("loginPassword");  
+    String loginemail = req.queryParams("loginemail");
+    String logineassword = req.queryParams("loginpassword");  
     
-    System.out.println("**login method**loginemail=" + loginEmail);
+    System.out.println("**login method**loginemail=" + loginemail);
     
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
@@ -93,9 +93,9 @@ public class Main {
         Statement stmt = connection.createStatement();
         
         
-        ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE email ='" +loginEmail+ "')" );
+        ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE email ='" +loginemail+ "')" );
             
-        if (loginEmail.equals(rs.getString("email") ) ){
+        if (loginemail.equals(rs.getString("email") ) ){
             System.out.println("Logged In Successfully");
         }
         
