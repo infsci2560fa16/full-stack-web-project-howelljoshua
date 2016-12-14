@@ -147,7 +147,7 @@ public class Main {
                     Statement stmt = connection.createStatement();                   
                     stmt.execute("INSERT INTO guitarists (firstname) VALUES ('" +guitartype+ "')"); 
          
-                    PreparedStatement pstmt = connection.prepareStatement(" INSERT INTO 'guitarists'(firstname)VALUES(?) ");
+                    PreparedStatement pstmt = connection.prepareStatement(" INSERT INTO guitarists(firstname) VALUES(?) ");
                     pstmt.setString(1, firstname);
                                
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
