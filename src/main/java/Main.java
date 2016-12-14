@@ -131,7 +131,9 @@ public class Main {
                 String skill = req.queryParams("skill");
             	String focus = req.queryParams("focus");
                 
-                System.out.println(firstname);
+                System.out.println("*** firstname: " + firstname);
+                
+                //System.out.println("*** body: " + req.body());
                 
                   //make new db connection, create a new hashmap to be used later for results
                 Connection connection = null;
@@ -141,8 +143,7 @@ public class Main {
                 try{
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                    
-                    stmt.execute("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')"); 
-                    
+                    stmt.execute("INSERT INTO guitarists (firstname) VALUES ('" +firstname+ "')");                     
                     
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
                     //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
