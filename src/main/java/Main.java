@@ -150,9 +150,9 @@ public class Main {
                     //            +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
                     //            +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')" ); 
          
-                                +"(firstname,lastname,email,password,genre,focus,guitartype)"                                
+                                +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instructiontype,zip)"                                
                                 +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
-                                +guitartype+ "')" );                             
+                                +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+                 "')" );                             
               
                                
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
