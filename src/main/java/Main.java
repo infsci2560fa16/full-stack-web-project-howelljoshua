@@ -146,7 +146,9 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                    
                     
-                    //stmt.execute("INSERT INTO guitarists (firstname) VALUES ('" +firstname+ "')");                     
+                    stmt.execute("INSERT INTO guitarists (firstname) VALUES ('" +firstname+ "')"); 
+
+                    
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
                     //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
                     //stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
@@ -154,7 +156,7 @@ public class Main {
                     //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
                      
-   
+                    /*
                     PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'"
                             + "(firstname,lastname,email,password,focus,genre,guitartype,instructiontype,skill,zip,agerange)"
                             + "VALUE(?,?,?,?,?,?,?,?,?,?,?)");
@@ -169,7 +171,7 @@ public class Main {
                                pstmt.setString(2, skill);
                                pstmt.setString(2, zip);
                                pstmt.setString(2, agerange);
-
+                    */
 
                     //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')");               
                     
