@@ -145,16 +145,16 @@ public class Main {
                 try{
                     connection = DatabaseUrl.extract().getConnection();
                     
-                    /*
+                    
                     Statement stmt = connection.createStatement();                   
                     stmt.execute("INSERT INTO guitarists"
                                 +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instructiontype,zip)"                                
                                 +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
                                 +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')"    );                             
-                    */
+                    
                     
                
-                    
+                    /*
                     PreparedStatement pstmt = connection.prepareStatement(    "INSERT INTO guitarists"
                             + "(firstname,lastname,email,password,focus,genre,guitartype,instructiontype,skill,zip,agerange)"
                             + " VALUES(?,?,?,?,?,?,?,?,?,?,?)"   );
@@ -169,14 +169,10 @@ public class Main {
                                pstmt.setString(9, skill);
                                pstmt.setString(10, zip);
                                pstmt.setString(11, agerange);
-                    
-
-               
-                    
-                    
+                        */
                     
                       //now that data has been inserted, query for all records in this table and make an arraylist of objects
-                    ResultSet rs = pstmt.executeQuery("SELECT * FROM guitarists");
+                    ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists");
                     ArrayList<String> output = new ArrayList<>(); 
                         while (rs.next()) {
                         output.add("Read from DB: " + rs.getTimestamp("tick"));
