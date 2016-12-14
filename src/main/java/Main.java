@@ -77,8 +77,7 @@ public class Main {
     
 
     
-    
- 
+//***LOGIN FUNCTION ...  
     get("/login", (Request req, Response res) -> {
 
     String loginuser = req.queryParams("loginuser");
@@ -95,31 +94,26 @@ public class Main {
         
         ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE username ='" +loginuser+ "')" );
             
-        if (loginpassword.equals(rs.getString("password") ) ){
-            System.out.println("Logged In Successfully");
-        }
+            if (loginpassword.equals(rs.getString("password") ) ){
 
-        
-        
-        ArrayList<String> output = new ArrayList<String>();
-        while (rs.next()) {
-          output.add( "First Name: " + rs.getString("firstname"));
-          output.add( "Last Name: " + rs.getString("lastname"));
-          output.add( "Email: " + rs.getString("email"));
-          output.add( "Password: " + rs.getString("password"));          
-          output.add( "Instruction Type: " + rs.getString("instructiontype"));
-          output.add( "Zip: " + rs.getString("zip"));
-          output.add( "Guitar Type: " + rs.getString("guitartype"));
-          output.add( "Musical Genre: " + rs.getString("genre"));
-          output.add( "Age Range: " + rs.getString("agerange"));
-          output.add( "Skill Level: " + rs.getString("skill"));
-          output.add( "Areas of Focus: " + rs.getString("focus"));
-        }
+                    ArrayList<String> output = new ArrayList<>();
+                    while (rs.next()) {
+                      output.add( "First Name: " + rs.getString("firstname"));
+                      output.add( "Last Name: " + rs.getString("lastname"));
+                      output.add( "Email: " + rs.getString("email"));
+                      output.add( "Password: " + rs.getString("password"));          
+                      output.add( "Instruction Type: " + rs.getString("instructiontype"));
+                      output.add( "Zip: " + rs.getString("zip"));
+                      output.add( "Guitar Type: " + rs.getString("guitartype"));
+                      output.add( "Musical Genre: " + rs.getString("genre"));
+                      output.add( "Age Range: " + rs.getString("agerange"));
+                      output.add( "Skill Level: " + rs.getString("skill"));
+                      output.add( "Areas of Focus: " + rs.getString("focus"));
+                    }
+                    attributes.put("results", output);
+                    return new ModelAndView(attributes, "db.ftl");
+            }
 
-
-        attributes.put("results", output);
-        return new ModelAndView(attributes, "db.ftl");
-        
       } catch (Exception e) {
         attributes.put("message", "There was an error: " + e);       
         return new ModelAndView(attributes, "error.ftl");
@@ -127,7 +121,7 @@ public class Main {
       } finally {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
-
+    return new ModelAndView(attributes, "db.ftl");  //will redirect to db.ftl and be blank
     }, new FreeMarkerEngine());    
     
     
@@ -165,9 +159,9 @@ public class Main {
                     
                     Statement stmt = connection.createStatement();                   
                     stmt.execute("INSERT INTO guitarists"
-                                +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instructiontype,zip)"                                
+                                +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instructiontype,username,zip)"                                
                                 +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
-                                +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')"    );                             
+                                +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +username+ "','" +zip+ "')"    );                             
                     
 
                     /*     Preppared Query that is no in use at the moment....
