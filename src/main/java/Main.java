@@ -144,13 +144,11 @@ public class Main {
                 
                 try{
                     connection = DatabaseUrl.extract().getConnection();
-                    Statement stmt = connection.createStatement();                    
-                    
-                    //stmt.execute("INSERT INTO guitarists (firstname) VALUES ('" +firstname+ "')"); 
-
-                    PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'(firstname)+ VALUES(?)");
-                               pstmt.setString(1, firstname);
-                               
+                    Statement stmt = connection.createStatement();                   
+                    stmt.execute("INSERT INTO guitarists (firstname) VALUES ('" +guitartype+ "')"); 
+         
+                    PreparedStatement pstmt = connection.prepareStatement(" INSERT INTO 'guitarists'(firstname)VALUES(?) ");
+                    pstmt.setString(1, firstname);
                                
                     //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
                     //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
@@ -162,7 +160,7 @@ public class Main {
                     /*
                     PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'"
                             + "(firstname,lastname,email,password,focus,genre,guitartype,instructiontype,skill,zip,agerange)"
-                            + "VALUE(?,?,?,?,?,?,?,?,?,?,?)");
+                            + "VALUES(?,?,?,?,?,?,?,?,?,?,?)");
                                pstmt.setString(1, firstname);
                                pstmt.setString(2, lastname);
                                pstmt.setString(2, email);
