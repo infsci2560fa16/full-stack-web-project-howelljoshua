@@ -113,10 +113,6 @@ public class Main {
         }
 
 
-
-
-
-
         attributes.put("results", output);
         return new ModelAndView(attributes, "db.ftl");
         
