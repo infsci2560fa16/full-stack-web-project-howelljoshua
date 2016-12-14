@@ -89,5 +89,6 @@ function login() {
         loginobj.loginemail + " / " + loginobj.loginpassword;
  
     console.log(loginemail, loginpassword);
+    console.log(logindata);
     
 }
