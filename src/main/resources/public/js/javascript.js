@@ -78,7 +78,7 @@ function login() {
     
     $.get( "login", $( "#profForm" ).serialize() );
     
-    logindata = JSON.Stringify( 
+    logindata = JSON.stringify( 
        {"loginemail" : loginemail,
         "loginpassword" : loginpassword});
     
