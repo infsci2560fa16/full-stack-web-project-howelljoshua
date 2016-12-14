@@ -144,42 +144,34 @@ public class Main {
                 
                 try{
                     connection = DatabaseUrl.extract().getConnection();
+                    
+                    /*
                     Statement stmt = connection.createStatement();                   
                     stmt.execute("INSERT INTO guitarists"
-                    //            +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instuctiontype,zip)"                                
-                    //            +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
-                    //            +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')" ); 
-         
                                 +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instructiontype,zip)"                                
                                 +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
-                                +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+                 "')" );                             
-              
-                               
-                    //stmt.execute("INSERT INTO guitarists (firstname, lastname, instructiontype, zip, guitartype, genre, agerange, skill, focus)
-                    //     VALUES ('Martin', 'Dale', 'Online Instruction', '40052','Acoustic', 'Folk', 'Thirties','Beginner', 'Chords')"   ); 
-                    //stmt.executeUpdate("CREATE TABLE IF NOT EXISTS guitarists (tick timestamp)");
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES('Mike','Bloomfield')");
-                    //stmt.executeUpdate("INSERT INTO guitarists VALUES (now())");                    
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname) VALUES (" +firstname+ ")"); 
-                     
-                    /*
-                    PreparedStatement pstmt = connection.prepareStatement("INSERT INTO 'guitarists'"
+                                +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')"    );                             
+                    */
+                    
+               
+                    
+                    PreparedStatement pstmt = connection.prepareStatement(    "INSERT INTO guitarists"
                             + "(firstname,lastname,email,password,focus,genre,guitartype,instructiontype,skill,zip,agerange)"
-                            + "VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                            + " VALUES(?,?,?,?,?,?,?,?,?,?,?)"   );
                                pstmt.setString(1, firstname);
                                pstmt.setString(2, lastname);
-                               pstmt.setString(2, email);
-                               pstmt.setString(2, password);
-                               pstmt.setString(2, focus);
-                               pstmt.setString(2, genre);
-                               pstmt.setString(2, guitartype);
-                               pstmt.setString(2, instructiontype);
-                               pstmt.setString(2, skill);
-                               pstmt.setString(2, zip);
-                               pstmt.setString(2, agerange);
-                    */
+                               pstmt.setString(3, email);
+                               pstmt.setString(4, password);
+                               pstmt.setString(5, focus);
+                               pstmt.setString(6, genre);
+                               pstmt.setString(7, guitartype);
+                               pstmt.setString(8, instructiontype);
+                               pstmt.setString(9, skill);
+                               pstmt.setString(10, zip);
+                               pstmt.setString(11, agerange);
+                    
 
-                    //stmt.executeUpdate("INSERT INTO guitarists (firstname, lastname) VALUES ('" +firstname+ "','" +lastname+ "')");               
+               
                     
                     
                     
