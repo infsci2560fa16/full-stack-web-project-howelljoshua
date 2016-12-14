@@ -146,9 +146,9 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
                     Statement stmt = connection.createStatement();                   
                     stmt.execute("INSERT INTO guitarists"
-                                //+"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instuctiontype,zip)"
-                                +"(firstname,lastname,email,password)"
-                                +" VALUES( '" +guitartype+ "','" +lastname+ "','" +email+ "','" +password+ "')"    ); 
+                                +"(firstname,lastname,email,password,genre,focus,guitartype,agerange,skill,instuctiontype,zip)"                                
+                                +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
+                                +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')" ); 
          
               
                                
