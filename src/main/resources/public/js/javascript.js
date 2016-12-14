@@ -76,7 +76,7 @@ function login() {
     loginemail = profForm["loginemail"].value;
     loginpassword = profForm["loginpassword"].value;
     
-    $.post( "login", $( "#profForm" ).serialize() );
+    $.post( "login", $("#profForm").serialize() );
     
     logindata = JSON.stringify( 
        {"loginemail" : loginemail,
@@ -89,7 +89,7 @@ function login() {
         loginobj.loginemail + " / " + loginobj.loginpassword;
  
     console.log(loginemail, loginpassword);
-    console.log(logindata.loginemail);
-    
+    console.log(logindata);
+    console.log($("#profForm").serialize());
     
 }
