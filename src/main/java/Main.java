@@ -76,50 +76,98 @@ public class Main {
     }, new FreeMarkerEngine());
     
 
-
+    
+    
  
-    /*    
-    post("/api", (req, res) -> userService.createUser(
-        String firstName = req.queryParams("firstname");
-        String lastname = req.queryParams("lastname");
-  
-        //todo : send to database
-        Connection connection = null;
-        Map<String, Object> attributes = new HashMap<>();
-        try {
-            connection = DatabaseUrl.extract().getConnection();
-            Statement stmt = connection.createStatement();
-            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-            stmt.executeUpdate("INSERT firstname, lastname INTO mytable VALUES (" firstname + "," + lastname +")");
-            ResultSet rs = stmt.executeQuery("SELECT * FROM mytable");
-            ArrayList<String> output = new ArrayList<String>();
-        while (rs.next()) {
-            output.add( "Read from DB: " + rs.getTimestamp("tick"));
+    get("/login", (req, res) -> {
+
+    String loginEmail = req.queryParams("loginEmail");
+    String loginPassword = req.queryParams("loginPassword");  
+    
+      Connection connection = null;
+      Map<String, Object> attributes = new HashMap<>();
+      try {
+        connection = DatabaseUrl.extract().getConnection();
+        Statement stmt = connection.createStatement();
+        
+        
+        ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE email ='" +loginEmail+ "')" );
+            
+        if (loginEmail == rs.getString("email")){
+            
         }
+        
+        ArrayList<String> output = new ArrayList<String>();
+        while (rs.next()) {
+          output.add( "First Name: " + rs.getString("firstname"));
+          output.add( "Last Name: " + rs.getString("lastname"));
+          output.add( "Email: " + rs.getString("email"));
+          output.add( "Password: " + rs.getString("password"));          
+          output.add( "Instruction Type: " + rs.getString("instructiontype"));
+          output.add( "Zip: " + rs.getString("zip"));
+          output.add( "Guitar Type: " + rs.getString("guitartype"));
+          output.add( "Musical Genre: " + rs.getString("genre"));
+          output.add( "Age Range: " + rs.getString("agerange"));
+          output.add( "Skill Level: " + rs.getString("skill"));
+          output.add( "Areas of Focus: " + rs.getString("focus"));
+        }
+
+
+
+
+
+
         attributes.put("results", output);
         return new ModelAndView(attributes, "db.ftl");
-        }
-        catch (Exception e) {
-        attributes.put("message", "There was an error: " + e);
+        
+      } catch (Exception e) {
+        attributes.put("message", "There was an error: " + e);       
         return new ModelAndView(attributes, "error.ftl");
-        }
-        finally {
-            if (connection != null) try{connection.close();} catch(SQLException e){}
-        }
-*/
+        
+      } finally {
+        if (connection != null) try{connection.close();} catch(SQLException e){}
+      }
 
-                //String instructiontype  = req.queryParams("instructiontype");
-                //String zip = req.queryParams("zip");
-                //String guitartype = req.queryParams("guitartype");
-                //String genre = req.queryParams("genre");
-                //String agerange = req.queryParams("agerange");
-                //String skill = req.queryParams("skill");
-            	//String focus = req.queryParams("focus");
-
-
-                
-      post("/saveuser", (Request req, Response res) -> {
-           
+    }, new FreeMarkerEngine());    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Post method to add a user to the database.
+      post("/saveuser", (Request req, Response res) -> {           
                 
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
@@ -134,8 +182,6 @@ public class Main {
             	String focus = req.queryParams("focus");
                 
                 System.out.println("*** firstname: " + firstname);
-                
-                //System.out.println("*** body: " + req.body());
                 
                   //make new db connection, create a new hashmap to be used later for results
                 Connection connection = null;
@@ -152,9 +198,8 @@ public class Main {
                                 +" VALUES( '" +firstname+ "','" +lastname+ "','" +email+ "','" +password+ "','" +genre+ "','" +focus+ "','"
                                 +guitartype+ "','" +agerange+ "','" +skill+ "','" +instructiontype+ "','" +zip+ "')"    );                             
                     
-                    
-               
-                    /*
+
+                    /*     Preppared Query that is no in use at the moment....
                     PreparedStatement pstmt = connection.prepareStatement(    "INSERT INTO guitarists"
                             + "(firstname,lastname,email,password,focus,genre,guitartype,instructiontype,skill,zip,agerange)"
                             + " VALUES(?,?,?,?,?,?,?,?,?,?,?)"   );

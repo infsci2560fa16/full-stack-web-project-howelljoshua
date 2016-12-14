@@ -1,8 +1,8 @@
 
 /* global profForm */
 
-//When user clicks on button, toggles visible/invisible  
-  function chooserBtn(){
+  //When user clicks on button, toggles visible/invisible  
+function chooserBtn(){
     document.getElementById("beginDropdown").classList.toggle("show");
 
 
@@ -24,11 +24,7 @@
 
     //called by Save button on Profile form, parses values from fields, makes JSON obj...
     //Sends to REST svc, passed to JDBC
-       function save() { 
-    
-    
-    
-    //profForm = document.getElementsById("profForm"); 
+function save() {  
     
     firstname = profForm["firstname"].value;
     lastname = profForm["lastname"].value;
@@ -56,8 +52,6 @@
     
     obj = JSON.parse(data);  //used to display the data by field
     
-
-
     document.getElementById("profText").innerHTML = 
             "Your profile has been created:" + "<br>" + 
             obj.firstname + " " + obj.lastname + "<br>" +
@@ -70,21 +64,18 @@
             obj.focus;  
 
 
-    $.post( "saveuser", $( "#profForm" ).serialize() );
-    
-//$.post("saveuser", data);  
-
-
-/*
-    $.ajax({
-        type: 'POST',
-        contentType: 'application/json',
-        url: 'saveuser',
-        dataType: 'json',
-        data: data
-    });
-*/
+    $.post( "saveuser", $( "#profForm" ).serialize() );  
     
     console.log(firstname, lastname);
     console.log(data);
-}    
+}   
+
+
+
+function login() {
+    firstname = profForm["loginemail"].value;
+    lastname = profForm["password"].value;
+    
+    $.post( "saveuser", $( "#profForm" ).serialize() );  
+    
+}
