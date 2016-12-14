@@ -79,10 +79,10 @@ public class Main {
     
     
  
-    get("/login", (req, res) -> {
+    post("/login", (req, res) -> {
 
     String loginemail = req.queryParams("loginemail");
-    String logineassword = req.queryParams("loginpassword");  
+    String loginpassword = req.queryParams("loginpassword");  
     
     System.out.println("**login method**loginemail=" + loginemail);
     

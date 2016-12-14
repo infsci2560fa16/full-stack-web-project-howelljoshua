@@ -76,7 +76,7 @@ function login() {
     loginemail = profForm["loginemail"].value;
     loginpassword = profForm["loginpassword"].value;
     
-    $.get( "login", $( "#profForm" ).serialize() );
+    $.post( "login", $( "#profForm" ).serialize() );
     
     logindata = JSON.stringify( 
        {"loginemail" : loginemail,
