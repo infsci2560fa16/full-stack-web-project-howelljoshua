@@ -79,12 +79,12 @@ public class Main {
     
     
  
-    post("/login", (Request req, Response res) -> {
+    get("/login", (Request req, Response res) -> {
 
-    String loginemail = req.queryParams("loginemail");
+    String loginuser = req.queryParams("loginuser");
     String loginpassword = req.queryParams("loginpassword");  
     
-    System.out.println("**login method**loginemail=" + loginemail);
+    System.out.println("**login method**loginuser=" + loginuser);
     
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
@@ -93,11 +93,12 @@ public class Main {
         Statement stmt = connection.createStatement();
         
         
-        ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE email ='" +loginemail+ "')" );
+        ResultSet rs = stmt.executeQuery("SELECT * FROM guitarists WHERE username ='" +loginuser+ "')" );
             
-        if (loginemail.equals(rs.getString("email") ) ){
+        if (loginpassword.equals(rs.getString("password") ) ){
             System.out.println("Logged In Successfully");
         }
+
         
         
         ArrayList<String> output = new ArrayList<String>();
@@ -141,6 +142,7 @@ public class Main {
                 String firstname = req.queryParams("firstname");        
             	String lastname = req.queryParams("lastname");
                 String email = req.queryParams("email");
+                String username = req.queryParams("username");
                 String password = req.queryParams("password");
                 String instructiontype  = req.queryParams("instructiontype");
                 String zip = req.queryParams("zip");

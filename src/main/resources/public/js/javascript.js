@@ -73,22 +73,22 @@ function save() {
 
 
 function login() {
-    loginemail = profForm["loginemail"].value;
+    loginuser = profForm["loginuser"].value;
     loginpassword = profForm["loginpassword"].value;
     
-    $.post( "login", $("#profForm").serialize() );
+    $.get( "login", $("#profForm").serialize() );
     
     logindata = JSON.stringify( 
-       {"loginemail" : loginemail,
+       {"loginuser" : loginuser,
         "loginpassword" : loginpassword});
     
     loginobj = JSON.parse(logindata);
         
     document.getElementById("showtext").innerHTML = 
-        "Email / Password:" + "<br>"+
-        loginobj.loginemail + " / " + loginobj.loginpassword;
+        "Username / Password:" + "<br>"+
+        loginobj.loginuser + " / " + loginobj.loginpassword;
  
-    console.log(loginemail, loginpassword);
+    console.log(loginuser, loginpassword);
     console.log(logindata);
     console.log($("#profForm").serialize());
     
