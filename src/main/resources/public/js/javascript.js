@@ -31,6 +31,7 @@ function save() {
     instructiontype = profForm["instructiontype"].value;
     email = profForm["email"].value;
     password = profForm["password"].value;
+    username = profForm["username"].value;
     zip = profForm["zip"].value;
     guitartype = profForm["guitartype"].value;
     genre = profForm["genre"].value;
@@ -72,24 +73,15 @@ function save() {
 
 
 
-function login() {
-    loginuser = profForm["loginuser"].value;
-    loginpassword = profForm["loginpassword"].value;
-    
-    $.get( "login", $("#profForm").serialize() );
-    
-    logindata = JSON.stringify( 
-       {"loginuser" : loginuser,
-        "loginpassword" : loginpassword});
-    
-    loginobj = JSON.parse(logindata);
-        
-    document.getElementById("showtext").innerHTML = 
-        "Username / Password:" + "<br>"+
-        loginobj.loginuser + " / " + loginobj.loginpassword;
- 
-    console.log(loginuser, loginpassword);
-    console.log(logindata);
-    console.log($("#profForm").serialize());
-    
+
+
+
+function update() {   
+    $.post( "updateuser", $("#profForm").serialize() );   
+}
+
+
+
+function isearch()  {
+    $.post( "instructorsearch", $("#instructorForm").serialize() );       
 }
